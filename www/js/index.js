@@ -16,7 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
 var content=document.getElementById('content');
+function get_new_message(){
+    
+}
 function build_message(msg){
     var html='<div class=line>';
     html+='<div class="right-chat bubble">'+msg+'<div class=date>2018/01/29</div></div>';
@@ -39,6 +43,8 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+        document.getElementById('modal').style.display="none";
+
     },
 
     // Update DOM on a Received Event

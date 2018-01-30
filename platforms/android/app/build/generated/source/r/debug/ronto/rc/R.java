@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package io.cordova.hellocordova;
+package ronto.rc;
 
 public final class R {
   public static final class drawable {

@@ -19,7 +19,7 @@
 var content=document.getElementById('content');
 function build_message(msg){
     var html='<div class=line>';
-    html+='<div class="right-chat bubble">방가용<div class=date>2018/01/29</div></div>';
+    html+='<div class="right-chat bubble">'+msg+'<div class=date>2018/01/29</div></div>';
     html+='</div>';
     return html;
 }
