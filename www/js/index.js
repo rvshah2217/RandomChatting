@@ -16,10 +16,29 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+var me=-1;
+var target=-1;
 var content=document.getElementById('content');
-function get_new_message(){
-    
+function get_message(){
+    $.get("http://202.31.147.197:7680/RandomChatting/random_chatting_php/get_new_message.php",{id:me}).done((r)=>{
+        alert(r);
+    });
+}
+function get_new_ticket(){
+    $.post("http://202.31.147.197:7680/RandomChatting/random_chatting_php/connect_to_server.php",{}).done((r)=>{
+        var obj=JSON.parse(r);
+        if(r.errmsg=="There have not target Should Waiting"){
+            //alert(r+"대기");
+            me=obj.me;
+            document.getElementById('modal').style.display="block";
+        }else{
+            //alert(r+"사람찾음");
+            me=obj.me;
+            target=obj.target;
+        }
+        alert(me+":"+target);
+        setInterval(get_message,1000);
+    });
 }
 function build_message(msg){
     var html='<div class=line>';
@@ -44,7 +63,7 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
         document.getElementById('modal').style.display="none";
-
+        get_new_ticket();
     },
 
     // Update DOM on a Received Event
