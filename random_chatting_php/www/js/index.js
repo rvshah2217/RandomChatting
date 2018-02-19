@@ -13,18 +13,25 @@ function get_message(){
             document.getElementById('modal').style.display="none";
             console.log(obj[0][1]+":ME!!ReallyMe::"+me);
 
-            if(obj[0][1]==me){
-                build_right_message(obj[0][3]);
-                if(target==-100){
-                    target=obj[0][2];
+                if(obj[0][1]==me){
+                    if(obj[0][3]!="(#chatting_start#)"){
+                        build_right_message(obj[0][3]);
+                    }
+                    
+                    if(target==-100){
+                        target=obj[0][2];
+                    }
+                }else{
+                    if(obj[0][3]!="(#chatting_start#)"){
+                        build_left_message(obj[0][3]);
+                    }
+                    if(target==-100){
+                        target=obj[0][2];
+                    }
                 }
-            }else{
-                build_left_message(obj[0][3]);
-                if(target==-100){
-                    target=obj[0][2];
-                }
-            }
-            console.log(":Target::"+target);
+                console.log(":Target::"+target);
+            
+            
             // else{
             //     build_left_message(obj[0][3]);
             // }
@@ -37,7 +44,7 @@ function get_new_ticket(){
         var obj=JSON.parse(r);
         console.log(r);
         if(obj.errmsg=="There have not target Should Waiting"){
-            alert(r+"대기");
+            //alert(r+"대기");
             me=obj.me;
             document.getElementById('modal').style.display="block";
             setInterval(get_message,300);
@@ -53,14 +60,18 @@ function get_new_ticket(){
     });
 }
 function build_right_message(msg){
+    var a=new Date();
+    var time=a.getHours()+":"+a.getMinutes()+":"+a.getSeconds();
     var html='<div class=line>';
-    html+='<div class="right-chat bubble">'+msg+'<div class=date>2018/01/29</div></div>';
+    html+='<div class="right-chat bubble">'+msg+'<div class=date>'+time+'</div></div>';
     html+='</div>';
     document.getElementById('content').innerHTML+=html;
 }
 function build_left_message(msg){
+    var a=new Date();
+    var time=a.getHours()+":"+a.getMinutes()+":"+a.getSeconds();
     var html='<div class=line>';
-    html+='<div class="left-chat bubble">'+msg+'<div class=date>2018/01/29</div></div>';
+    html+='<div class="left-chat bubble">'+msg+'<div class=date>'+time+'</div></div>';
     html+='</div>';
     document.getElementById('content').innerHTML+=html;
 }

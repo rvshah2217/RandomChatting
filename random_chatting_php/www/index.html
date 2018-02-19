@@ -5,32 +5,43 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <div class=modal id=modal>
-            <div class=modal_top_margin></div>
+        <div class=header>Random Chatting</div>
+        <center>
+
+            <div class=modal id=modal>
+                <div class=modal_top_margin></div>
+                <center>
+                    <img class=heart src="heart.gif">
+                    <div class=modal_content>
+                        
+                            Waiting person!
+                        
+                    </div>
+                </center>
+            </div>
             <center>
-                <div class=modal_content>
-                    
-                        Waiting person!
-                    
+                <div class=content id=content>
+                    <div style="height:20px"></div>
+                    <!-- <div class=line>
+                        <div class="left-chat bubble">안녕하세요 누구세용<div class=date>2018/01/29</div></div>
+                    </div>
+                    <div class=line>
+                        <div class="right-chat bubble">방가용<div class=date>2018/01/29</div></div>
+                    </div> -->
                 </div>
             </center>
-        </div>
-        <div class=content id=content>
-            <!-- <div class=line>
-                <div class="left-chat bubble">안녕하세요 누구세용<div class=date>2018/01/29</div></div>
+            <div id=key_input class=key_input>
+                <div class=input_space>
+                    <input type=text id=key_input_text> 
+                </div>
+                <div class=input_btn onclick="send_message()">
+                    SEND
+                </div>
             </div>
-            <div class=line>
-                <div class="right-chat bubble">방가용<div class=date>2018/01/29</div></div>
-            </div> -->
-        </div>
-        <div id=key_input class=key_input>
-            <div class=input_space>
-                <input type=text id=key_input_text> 
-            </div>
-            <div class=input_btn onclick="send_message()">
-                보내기
-            </div>
-        </div>
+
+        </center>
+        
+
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
