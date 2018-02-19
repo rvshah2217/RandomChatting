@@ -1,16 +1,13 @@
 <?php
     include("init.php");
-
     $query="SELECT no,timediff(now(),time) FROM rc_wait_queue";
     
-    $waiting_time=new DateTime('00:05:00');
+    $waiting_time="5";
     $target=-1;
     if($result=mysqli_query($con,$query)){
         while($row=mysqli_fetch_row($result)){
-            $diffed_time=new DateTime($row[1]); 
-
-            $time_minus=round(($diffed_time->format('U')-$waiting_time->format('U'))/(60));
-            if($time_minus<=5){
+            $diffed_time=explode(":",$row[1]);
+            if($waiting_time>$diffed_time[1]){
                 //최근 사용자
                 //echo $row[0];
                 $target=$row[0];
@@ -40,5 +37,4 @@
         }
     }
     echo json_encode($result_json);
-
 ?>

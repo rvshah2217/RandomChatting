@@ -1,6 +1,7 @@
 <?php
     include("init.php");
     $id=$_GET['id'];
+
     $result_array=array();
     $flag=-1;
     $query="SELECT * FROM rc_message WHERE src_user=$id";
