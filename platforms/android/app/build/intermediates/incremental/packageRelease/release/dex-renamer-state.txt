@@ -1,0 +1,4 @@
+#Tue Feb 20 02:37:20 KST 2018
+base.0=D\:\\Work\\RC\\rc\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0
+renamed.0=classes.dex
+file.0=D\:\\Work\\RC\\rc\\platforms\\android\\app\\build\\intermediates\\transforms\\dex\\release\\0\\classes.dex

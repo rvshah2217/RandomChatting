@@ -1,69 +1,12 @@
-*{
+body{
     margin:0px;
-    padding:0px;
 }
-html,body{
+iframe{
+    border:none;
+    outline:none;
     width:100%;
     height:100%;
-}
-.line{
-    height:60px;
-    width:100%;
-}
-.left-chat{
-    height:60px;
-    float:left;
-}
-.right-chat{
-    height:60px;
-    float:right;
-}
-.bubble{
-    border-radius:15px;
-}
-.date{
-    font-size:10px;
-    color:#e9e9e9;
-}
-.key_input{
-    height:60px;
-    width:100%;
-    border:1px solid black;
-    border-right:none;
-    border-left:none;
-    border-bottom:none;
-    position:fixed;
-    bottom:0px;
-    left:0px;
-}
-.input_space{
-    width:80%;
-    height:60px;
-    display:inline-block;
-    background-color:black;
-}
-.input_btn{
-    width:20%;
-    height:60px;
-    display:inline-block;
-    background-color:yellow;
-    margin-left:-5px;
-
-}
-.modal{
-    position:fixed;
-    left:0px;
+    position:absolute;
     top:0px;
-    width:100%;
-    height:100%;
-    background-color:rgba(0,0,0,0.5);
-    z-index:10
-}
-.modal_top_margin{
-    margin-top:40%;
-}
-.modal_content{
-    background-color:white;
-    width:50%;
-    height:100px;
+    left:0px;
 }
